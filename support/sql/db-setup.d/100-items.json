@@ -1,0 +1,7 @@
+{
+"table": "items",
+"data":[{
+  "name": "Le Chuck",
+  "picture_url": "http://localhost:3000/images/lechuck.png",
+  "site_url": "http://localhost:3000"
+}]}

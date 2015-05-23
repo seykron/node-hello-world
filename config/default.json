@@ -1,0 +1,14 @@
+{
+  "debugMode": true,
+  "port": 3000,
+  "dataSource": {
+    "host": "localhost",
+    "user": "hello_world",
+    "password": "hello_world",
+    "database": "hello_world",
+    "drop": true
+  },
+  "context": {
+    "title": "Hello World!"
+  }
+}
