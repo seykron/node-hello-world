@@ -1,8 +1,7 @@
 node-hello-world
 ================
 
-Table of Contents
-=================
+## Table of Contents
 
   * [Quick start](#quick-start)
   * [Summary](#summary)
