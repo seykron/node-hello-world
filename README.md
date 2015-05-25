@@ -1,7 +1,10 @@
 node-hello-world
 ================
 
-* [node-hello-world](#node-hello-world)
+Table of Contents
+=================
+
+  * [Quick start](#quick-start)
   * [Summary](#summary)
   * [Libraries](#libraries)
   * [Application structure](#application-structure)
@@ -9,6 +12,14 @@ node-hello-world
     * [Initialization](#initialization)
     * [Controllers](#controllers)
   * [Data Source](#data-source)
+
+## Quick start
+
+1. Clone the repository
+
+2. Run ```npm install```
+
+3. Start the application: ```node index.js```
 
 ## Summary
 
