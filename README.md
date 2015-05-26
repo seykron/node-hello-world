@@ -46,7 +46,7 @@ Frontend libraries: jquery, bootstrap, es5-shim, font-awesome
 [Domain Driven Design](https://en.wikipedia.org/wiki/Domain-driven_design) is
 the design principle behind the application structure.
 
-It follows the one-component-per-file convention. Components files has CamelCase
+It follows the one-component-per-file convention. Components files have CamelCase
 names, with an upper-case first letter. All multi-components files like
 controllers should be given camelCase names with a lower-case first letter.
 
