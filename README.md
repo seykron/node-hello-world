@@ -82,11 +82,8 @@ repositories.
 file by each controller, despite how many routes it handles. Each controller
 must handle a single resource.
 
-**app/views/**: view files goes here. Views must have ```.html``` extension and
+**app/views/**: view files go here. Views must have ```.html``` extension and
 they are rendered with handlebars.
-
-**app/views/**: view files goes here. They must be HTML files with handlebars
-directives.
 
 **app/views/partials/**: partials are reusable components. They must have
 ```.html``` extension and they can be included in views by using the following
