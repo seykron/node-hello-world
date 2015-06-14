@@ -11,6 +11,7 @@ node-hello-world
     * [Initialization](#initialization)
     * [Controllers](#controllers)
   * [Data Source](#data-source)
+  * [Static resources and front-end libraries](#static-resources-and-front-end-libraries)
 
 ## Quick start
 
@@ -22,7 +23,9 @@ node-hello-world
 
 ## Summary
 
-Basic project structure for a web application. It includes:
+Basic project structure for a web application. It has not scaffolding and it
+will never have. The goal is to reduce the bootstrap time, but bootstrap occurs
+only once. That said, it includes:
 
 * Application structure
 
@@ -181,3 +184,53 @@ convention:
 
 Each element in the ```data``` array is a single registry in the table defined
 by the ```table``` attribute.
+
+## Static resources and front-end libraries
+
+Static resources are managed by express, and by default the ```AppContext```
+maps the ```app/assets/``` directory to the application root. So,
+```app/assets/css/main.css``` is mapped to
+```http://localhost:3000/css/main.css```. It uses the express helper to map
+static resources.
+
+Front-end libraries are managed with npm. Why? Because both npm and grunt have
+good enough integration to manage front-end dependencies without adding another
+technical tier like bower.
+
+It uses [npmcopy grunt task](https://github.com/timmywil/grunt-npmcopy) to copy
+front-end dependencies on the [npm's
+postinstall](https://docs.npmjs.com/misc/scripts) hook.
+```Gruntfile.client.json``` file has the task configuration. The default
+configuration sets the front-end libraries path to ```app/assets/vendor/```.
+
+For instance, in order to add the jquery-ui dependency you should perform the
+following actions:
+
+1. Add the dependency to npm: ```npm install jquery-ui --save```
+
+2. Map the dependency to the npmcopy grunt task:
+
+**Gruntfile.client.json**
+
+```
+{
+  "npmcopy": {
+    "options": {
+      "destPrefix": "app/assets/vendor"
+    },
+    "libs": {
+      "files": {
+        "lib/jquery-ui": "jquery-ui"
+      }
+    }
+  }
+}
+```
+
+It will cause directory ```node_modules/jquery-ui``` be copied
+to ```app/assets/vendor/lib/jquery-ui```.
+
+3. Run ```grunt npmcopy``` to force copying the directory. Now you can reference
+jquery-ui components from views. For instance:
+
+```http://localhost:3000/vendor/lib/jquery-ui/core.js```
